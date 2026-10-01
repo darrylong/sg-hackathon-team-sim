@@ -1,0 +1,8 @@
+,ROC-AUC,PR-AUC,precision@50,recall@50
+gap model (HGB),0.872,0.064,0.12,0.097
+fade_score alone,0.469,0.021,0.04,0.032
+combined 0.6*gap + 0.4*fade,0.797,0.038,0.06,0.048
+baseline: days_since_last_order,0.695,0.053,0.1,0.081
+baseline: -rev_trend4,0.451,0.021,0.08,0.065
+gap model alone (rank),0.871,0.065,0.12,0.097
+gap + targeted fade boost,0.87,0.065,0.12,0.097

@@ -1,0 +1,5 @@
+strategy,routing_cost,abstain_rate,category_macro_f1,team_macro_f1_routed,priority_macro_f1,sentiment_macro_f1,P1_recall,P1_precision,escalation_f1
+A: Never abstain,0.1952,0.0,0.8598,0.8952,0.7533,0.8669,0.7489,0.6721,0.8547
+B: Simple thresholds,0.1555,0.147,0.8238,0.9385,0.7533,0.8669,0.7489,0.6721,0.8547
+C: Ours (cost-aware + cap),0.1585,0.147,0.8224,0.9366,0.7533,0.8669,0.7489,0.6721,0.8547
+D: Hybrid (safety rules + thresholds),0.1568,0.147,0.8227,0.9377,0.7533,0.8669,0.7489,0.6721,0.8547

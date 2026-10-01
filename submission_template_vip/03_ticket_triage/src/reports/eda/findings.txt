@@ -1,0 +1,480 @@
+
+==============================================================================
+1. LABEL BALANCE - how common is each value?
+==============================================================================
+
+category:
+            count     %
+category               
+Hardware     4867  16.2
+Networking   4432  14.8
+Software     4145  13.8
+Storage      3942  13.1
+Access       3581  11.9
+Firmware     3354  11.2
+Security     3091  10.3
+Billing      2588   8.6
+
+priority:
+          count     %
+priority             
+P3         9372  31.2
+P2         8737  29.1
+P4         8565  28.6
+P1         3326  11.1
+
+assigned_team:
+                  count     %
+assigned_team                
+Server-HW          7646  25.5
+Network-Support    5155  17.2
+Software-Support   4066  13.6
+Account-Admin      4032  13.4
+Storage-Support    3871  12.9
+Security-Ops       2646   8.8
+Billing-Ops        2584   8.6
+
+sentiment:
+            count     %
+sentiment              
+Neutral     12544  41.8
+Frustrated   7522  25.1
+Positive     5153  17.2
+Angry        4781  15.9
+
+channel:
+         count     %
+channel             
+email    14998  50.0
+portal    8926  29.8
+chat      6076  20.3
+
+product:
+                      count     %
+product                          
+GreenLake              8046  26.8
+ProLiant DL380 Gen11   3897  13.0
+iLO 6                  3140  10.5
+Alletra 6010           3024  10.1
+ProLiant DL360 Gen10   2848   9.5
+Aruba CX 6300          2490   8.3
+Aruba CX 8360          2358   7.9
+Synergy 480 Gen11      2210   7.4
+Nimble HF40            1987   6.6
+[chart saved] 01_label_balance.png
+
+==============================================================================
+2. CATEGORY -> TEAM - does category alone decide the team?
+==============================================================================
+assigned_team  Account-Admin  Billing-Ops  Network-Support  Security-Ops  Server-HW  Software-Support  Storage-Support
+category                                                                                                              
+Access                  3387           64                0            63          0                67                0
+Billing                  117         2471                0             0          0                 0                0
+Firmware                   0            0              612             9       2043                37              653
+Hardware                   0            0              146             0       4083                 0              638
+Networking                 0            0             4284            45        100                 0                3
+Security                 446            2               87          2500          0                56                0
+Software                  82           47                7            29         70              3906                4
+Storage                    0            0               19             0       1350                 0             2573
+[chart saved] 02_category_vs_team.png
+
+Share of each category that goes to its most common team:
+                    top_team  % to top team
+category                                   
+Firmware           Server-HW           60.9
+Storage      Storage-Support           65.3
+Security        Security-Ops           80.9
+Hardware           Server-HW           83.9
+Software    Software-Support           94.2
+Access         Account-Admin           94.6
+Billing          Billing-Ops           95.5
+Networking   Network-Support           96.7
+
+==============================================================================
+3. PRODUCT CHANGES THE TEAM - same category, different product
+==============================================================================
+
+Firmware  (overall top team: Server-HW)
+assigned_team         Network-Support  Security-Ops  Server-HW  Software-Support  Storage-Support
+product                                                                                          
+Alletra 6010                        0             0          6                 2              345
+Aruba CX 6300                     359             6          1                 0                0
+Aruba CX 8360                     231             3          4                 2                0
+GreenLake                           0             0         18                26               10
+Nimble HF40                         0             0          8                 3              276
+ProLiant DL360 Gen10                3             0        467                 0                5
+ProLiant DL380 Gen11                4             0        573                 2                7
+Synergy 480 Gen11                   6             0        364                 0                4
+iLO 6                               9             0        602                 2                6
+[chart saved] 03_product_team_firmware.png
+
+Hardware  (overall top team: Server-HW)
+assigned_team         Network-Support  Server-HW  Storage-Support
+product                                                          
+Alletra 6010                        0         15              343
+Aruba CX 6300                      31         13                0
+Aruba CX 8360                      28         17                0
+GreenLake                           6          6                3
+Nimble HF40                         0          8              247
+ProLiant DL360 Gen10               23       1264               13
+ProLiant DL380 Gen11               27       1428               18
+Synergy 480 Gen11                  26       1057                9
+iLO 6                               5        275                5
+[chart saved] 03_product_team_hardware.png
+
+Storage  (overall top team: Storage-Support)
+assigned_team         Network-Support  Server-HW  Storage-Support
+product                                                          
+Alletra 6010                        0         41             1346
+Aruba CX 6300                       3          0                1
+Aruba CX 8360                       3          0                5
+GreenLake                           0          2              167
+Nimble HF40                         0         33             1031
+ProLiant DL360 Gen10                2        309                2
+ProLiant DL380 Gen11                6        682                7
+Synergy 480 Gen11                   5        269                2
+iLO 6                               0         14               12
+[chart saved] 03_product_team_storage.png
+
+Security  (overall top team: Security-Ops)
+assigned_team         Account-Admin  Billing-Ops  Network-Support  Security-Ops  Software-Support
+product                                                                                          
+Alletra 6010                      1            0                4           197                 4
+Aruba CX 6300                     2            0               26           269                 0
+Aruba CX 8360                     2            0               20           244                 4
+GreenLake                       416            2                8           461                30
+Nimble HF40                       0            0                0             2                 6
+ProLiant DL360 Gen10              3            0                6           235                 3
+ProLiant DL380 Gen11              7            0               13           330                 4
+Synergy 480 Gen11                 0            0                4             4                 0
+iLO 6                            15            0                6           758                 5
+[chart saved] 03_product_team_security.png
+
+Access  (overall top team: Account-Admin)
+assigned_team         Account-Admin  Billing-Ops  Security-Ops  Software-Support
+product                                                                         
+Alletra 6010                    181            2             7                 6
+Aruba CX 6300                     7            3             3                 0
+Aruba CX 8360                   166            1             2                 3
+GreenLake                      2136           53            24                36
+Nimble HF40                       2            0             0                 2
+ProLiant DL360 Gen10              3            0             5                 6
+ProLiant DL380 Gen11              9            1             5                 3
+iLO 6                           883            4            17                11
+[chart saved] 03_product_team_access.png
+
+Top exceptions: (category, product) -> team that differs from the category default
+category              product             team      instead_of  tickets  % of this product
+ Storage ProLiant DL380 Gen11        Server-HW Storage-Support      682               98.1
+Firmware        Aruba CX 6300  Network-Support       Server-HW      359               98.1
+Firmware         Alletra 6010  Storage-Support       Server-HW      345               97.7
+Hardware         Alletra 6010  Storage-Support       Server-HW      343               95.8
+ Storage ProLiant DL360 Gen10        Server-HW Storage-Support      309               98.7
+Firmware          Nimble HF40  Storage-Support       Server-HW      276               96.2
+ Storage    Synergy 480 Gen11        Server-HW Storage-Support      269               97.5
+Hardware          Nimble HF40  Storage-Support       Server-HW      247               96.9
+Firmware        Aruba CX 8360  Network-Support       Server-HW      231               96.2
+Hardware        Aruba CX 6300  Network-Support       Server-HW       31               70.5
+Hardware        Aruba CX 8360  Network-Support       Server-HW       28               62.2
+Firmware            GreenLake Software-Support       Server-HW       26               48.1
+ Storage                iLO 6        Server-HW Storage-Support       14               53.8
+Hardware            GreenLake  Network-Support       Server-HW        6               40.0
+Security          Nimble HF40 Software-Support    Security-Ops        6               75.0
+  Access ProLiant DL360 Gen10 Software-Support   Account-Admin        6               42.9
+Security    Synergy 480 Gen11  Network-Support    Security-Ops        4               50.0
+ Storage        Aruba CX 6300  Network-Support Storage-Support        3               75.0
+
+==============================================================================
+4. CUSTOMER SEVERITY TAG (portal) vs TRUE PRIORITY
+==============================================================================
+Portal tickets: 8,926; tag found in 8,926 (100.0%)
+  spelled correctly: 8,714; typo fixed by fuzzy matching: 212
+  could not be normalised: 0  []
+
+Example typo fixes (raw -> normalised):
+raw_severity severity
+     Mediuum   Medium
+       Higgh     High
+        gigh     High
+        Hihh     High
+    Criticak Critical
+          Lo      Low
+         Liw      Low
+     Mediium   Medium
+       Mdium   Medium
+   Crritical Critical
+
+Severity tags in non-portal tickets: 0
+
+Row % - for each customer severity, what the true priority was:
+priority    P1    P2    P3    P4
+severity                        
+Critical  35.8  40.8  17.6   5.8
+High      12.5  43.8  30.8  12.9
+Medium     4.6  22.4  39.4  33.6
+Low        0.1   8.1  29.0  62.8
+[chart saved] 04_severity_vs_priority.png
+
+Tag 'agrees' with priority (Critical=P1, High=P2, Medium=P3, Low=P4): 44.4%
+When the customer says Critical, the ticket is really P1 only 35.8% of the time
+
+==============================================================================
+5. SENTIMENT vs PRIORITY
+==============================================================================
+Row % - for each sentiment, the mix of priorities:
+priority      P1    P2    P3    P4
+sentiment                         
+Angry       28.8  42.2  20.2   8.8
+Frustrated  14.1  41.5  29.2  15.2
+Neutral      6.0  23.9  35.5  34.7
+Positive     2.7  11.8  34.1  51.4
+[chart saved] 05_sentiment_vs_priority.png
+
+==============================================================================
+6. CHANNEL STYLE - how does each channel write?
+==============================================================================
+         tickets  avg_words  pct_lowercase_letters  pct_all_lowercase  pct_with_exclamation
+channel                                                                                    
+chat        6076       42.3                   97.0               58.9                   3.0
+email      14998       47.8                   91.6                0.0                   2.8
+portal      8926       48.2                   92.5                0.0                   3.0
+
+Example chat bodies:
+  - Hey, Still waiting after 2 days. CRC errors r slowly increasing on 1/1/51 of the Aruba CX 6300, no user complaints yet. The servers on that VLAN r healthy. I'm escalating this to our account manager. Thanks for nothing. Can someone take a look?
+  - which api version should we target for the new proliant dl380 gen11 integration? it is in our test environment. not urgent. regenerated the api token, still failing. great, thx. please help.
+
+Example email bodies:
+  - Hi all, Quick question about our Aruba CX 8360 setup. Best, Anna Kumar | Bukit Analytics IT Ops
+  - Good afternoon, app08 on the ProLiant DL380 Gen11 dropped off the network and we cannot reach it at all. A few teams are impacted. Can someone take a look? Thanks, Nurul Ismail
+
+Example portal bodies:
+  - [Customer-selected severity: Medium] Which transceivers are supported for 1/1/35 on the Aruba CX 6300? It hosts our core banking VMs. We've been going back and forth for 2 days. What are the next steps?
+  - [Customer-selected severity: Critical] We need to export the last 90 days of login audit events from iLO 6. This is our production iLO 6 in SG1. Single device, nothing else. Log: "2026-08-27 22:02:33 tls: certificate expired, subject CN=sql56" We've been going back and forth for 4 days. Please help.
+[chart saved] 06_channel_style.png
+
+==============================================================================
+7. TICKET LENGTH (words in subject + body)
+==============================================================================
+           tickets  median_words  mean_words  min  max  < 8 words  % < 8 words
+file                                                                          
+train        30000          45.0        46.8    9  119          0          0.0
+eval          6000          45.0        46.3    2  116        101          1.7
+curveball       15          26.0        25.2    4   36          1          6.7
+[chart saved] 07_length_histogram.png
+
+==============================================================================
+8. TRAIN vs EVAL vs CURVEBALL
+==============================================================================
+
+channel % in each file:
+         train  eval  curveball
+channel                        
+chat      20.3  20.2       20.0
+email     50.0  50.0       66.7
+portal    29.8  29.8       13.3
+[chart saved] 08_split_channel.png
+  channel values in eval never seen in training: none
+  channel values in curveball never seen in training: none
+
+product % in each file:
+                      train  eval  curveball
+product                                     
+Alletra 6010           10.1  10.2        6.7
+Aruba CX 6300           8.3   8.4       20.0
+Aruba CX 8360           7.9   7.4        6.7
+GreenLake              26.8  25.7       26.7
+Nimble HF40             6.6   6.8        6.7
+ProLiant DL360 Gen10    9.5  10.2       13.3
+ProLiant DL380 Gen11   13.0  13.4       13.3
+Synergy 480 Gen11       7.4   8.2        6.7
+iLO 6                  10.5   9.7        0.0
+[chart saved] 08_split_product.png
+  product values in eval never seen in training: none
+  product values in curveball never seen in training: none
+
+All curveball tickets:
+
+  CB-001  [email]  product: ProLiant DL380 Gen11
+    subject: Thank you SO much
+    body:    Wow, what an achievement: the DL380 in our trading rack has now rebooted itself four times since your engineer swapped the system board yesterday. Truly inspiring stuff. It's our production pricing engine.
+
+  CB-002  [chat]  product: GreenLake
+    subject: it broke
+    body:    it broke
+
+  CB-003  [email]  product: ProLiant DL360 Gen10
+    subject: server tak boleh boot
+    body:    Hi team, server DL360 kita tak boleh boot since pagi tadi, LED amber. Production database on it. Tolong check ASAP.
+
+  CB-004  [portal]  product: Synergy 480 Gen11
+    subject: server room aircon dead
+    body:    [Customer-selected severity: Critical] The aircon in our server room died about an hour ago, room is at 38C and the Synergy frame is screaming. Who do we call?
+
+  CB-005  [email]  product: Alletra 6010
+    subject: volume read-only
+    body:    At 09:14 the payments volume on the Alletra went read-only. Card transactions are failing in all 140 stores. We have not touched anything.
+
+  CB-006  [email]  product: ProLiant DL360 Gen10
+    subject: URGENT!!!
+    body:    URGENT: what's the part number for the front bezel of a DL360 Gen10? Need to order one for a lab box. Thanks!
+
+  CB-007  [email]  product: Aruba CX 8360
+    subject: AOS-CX upgrade failed
+    body:    Upgrade of our CX 8360 core from 10.13.1000 to 10.14.1020 failed and the switch came back on the secondary image. Traffic is flowing but we are one reboot away from trouble.
+
+  CB-008  [email]  product: GreenLake
+    subject: SSO broken after cert rotation
+    body:    Since our Okta signing certificate rotated last night, SAML SSO into GreenLake fails for every admin. Third time this happens after a rotation. Please fix the trust config.
+
+  CB-009  [email]  product: GreenLake
+    subject: great news + a question
+    body:    Great news - the fix from last week worked, love it, thanks a lot! One small question: why does invoice INV-0048812 list two support SKUs? No rush.
+
+  CB-010  [email]  product: ProLiant DL380 Gen11
+    subject: logical drive failed
+    body:    Smart Array on DL380 host db07 reports logical drive 1 FAILED after a power blip; Windows won't boot. It's our staging SQL box.
+
+  CB-011  [email]  product: Aruba CX 6300
+    subject: Paketverlust im Core
+    body:    Hallo zusammen, seit dem Wartungsfenster verliert der CX 6300 im VLAN 210 etwa 30% der Pakete. Das ist unser Produktivnetz, alle Filialen sind betroffen. Das ist inakzeptabel.
+
+  CB-012  [portal]  product: GreenLake
+    subject: can't see invoices
+    body:    [Customer-selected severity: Medium] Our finance lead was added to GreenLake but sees an empty billing page, so she can't download invoices. Can you give her the billing viewer role?
+
+  CB-013  [email]  product: Aruba CX 6300
+    subject: THIRD TIME
+    body:    THIRD TIME I AM WRITING. HALF OUR OFFICE HAS NO NETWORK SINCE MONDAY AND NOBODY HAS CALLED BACK. DO YOUR JOB.
+
+  CB-014  [chat]  product: Aruba CX 6300
+    subject: vlan
+    body:    teh vlan 20 isnt pasing trafic sinc upgrde, only few ppl affected, pls chek
+
+  CB-015  [chat]  product: Nimble HF40
+    subject: again
+    body:    same thing as before, it's doing it again
+
+==============================================================================
+9a. WHY STORAGE? - risk profile of every category
+==============================================================================
+            % of all tickets  % of all P1 tickets  P1 rate in category %  Angry %  % to top team  avg misroute cost
+category                                                                                                           
+Storage                13.14                26.82                  22.63    19.84          65.27               2.90
+Hardware               16.22                24.26                  16.58    18.64          83.89               2.49
+Networking             14.77                14.22                  10.67    17.44          96.66               2.12
+Firmware               11.18                10.91                  10.82    16.10          60.91               2.07
+Security               10.30                10.43                  11.23    15.04          80.88               2.07
+Software               13.82                 8.15                   6.54    14.33          94.23               1.74
+Access                 11.94                 5.11                   4.75    13.40          94.58               1.62
+Billing                 8.63                 0.09                   0.12     9.27          95.48               1.05
+[chart saved] 09a_tickets_vs_p1_share.png
+
+==============================================================================
+9b. STORAGE: SENTIMENT vs PRIORITY
+==============================================================================
+Row % - within Storage, the priority mix for each sentiment:
+priority      P1    P2    P3    P4
+sentiment                         
+Angry       45.8  35.3  14.2   4.7
+Frustrated  25.6  42.4  22.5   9.4
+Neutral     14.8  27.2  31.6  26.4
+Positive     5.7  16.0  32.4  45.8
+[chart saved] 09b_storage_sentiment_vs_priority.png
+
+An Angry Storage ticket is P1 45.8% of the time vs 5.7% for Positive.
+
+==============================================================================
+9c. STORAGE: PRODUCT vs TEAM
+==============================================================================
+assigned_team         Network-Support  Server-HW  Storage-Support
+product                                                          
+Alletra 6010                        0         41             1346
+Aruba CX 6300                       3          0                1
+Aruba CX 8360                       3          0                5
+GreenLake                           0          2              167
+Nimble HF40                         0         33             1031
+ProLiant DL360 Gen10                2        309                2
+ProLiant DL380 Gen11                6        682                7
+Synergy 480 Gen11                   5        269                2
+iLO 6                               0         14               12
+[chart saved] 09c_storage_product_vs_team.png
+
+The rule in plain English (each product's most common team):
+  Alletra 6010           -> Storage-Support  (97% of 1387 tickets)
+  Aruba CX 6300          -> Network-Support  (75% of 4 tickets)
+  Aruba CX 8360          -> Storage-Support  (62% of 8 tickets)
+  GreenLake              -> Storage-Support  (99% of 169 tickets)
+  Nimble HF40            -> Storage-Support  (97% of 1064 tickets)
+  ProLiant DL360 Gen10   -> Server-HW        (99% of 313 tickets)
+  ProLiant DL380 Gen11   -> Server-HW        (98% of 695 tickets)
+  Synergy 480 Gen11      -> Server-HW        (97% of 276 tickets)
+  iLO 6                  -> Server-HW        (54% of 26 tickets)
+
+  Storage arrays/cloud (Alletra 6010, GreenLake, Nimble HF40) -> Storage-Support
+  Servers (ProLiant DL360 Gen10, ProLiant DL380 Gen11, Synergy 480 Gen11) -> Server-HW (disks/RAID inside a server stay with the server team)
+  Too few tickets to call a rule (<50): Aruba CX 6300, Aruba CX 8360, iLO 6
+
+==============================================================================
+9d. ESCALATION RISK = Angry, or Frustrated with P1/P2
+==============================================================================
+            tickets  escalation risk %  % of risky that are P1
+category                                                      
+Storage        3942               38.7                    41.8
+Hardware       4867               35.1                    34.2
+Networking     4432               34.6                    23.5
+Firmware       3354               30.9                    27.1
+Security       3091               28.9                    29.0
+Software       4145               25.9                    18.1
+Access         3581               25.6                    13.3
+Billing        2588               10.8                     1.1
+
+Overall: 29.9% of tickets are escalation risks; 27.2% of those are P1 (vs 11.1% P1 across all tickets).
+[chart saved] 09d_escalation_risk_by_category.png
+
+==============================================================================
+9e. STORAGE P1 TICKETS WITH SARCASM-LIKE POSITIVE WORDS
+==============================================================================
+97 of 892 Storage P1 tickets (10.9%) contain a positive-sounding phrase.
+Labelled sentiment of those tickets:
+sentiment
+Angry       76
+Positive    13
+Neutral      8
+
+  TK-119587  [portal]  ProLiant DL360 Gen10  sentiment=Angry  matched: brilliant, love how
+    subject: ProLiant DL360 Gen10 array
+    body:    [Customer-selected severity: High] It is a proof-of-concept system. Go-live is tomorrow morning. There is no recent backup of this data. It's only me as far as I can tell. Following up on case 5051304 again. Latency on ds-esx-22 jumped past 50 ms since this morning and the ProLiant DL360 Gen10 shows no errors. Replication from the ProLiant DL360 Gen10 to the DR array has been failing for 4 days. Log: "2026-06-19 02:29:24 array: volume ds-esx-22 state changed to OFFLINE" The server itself is healthy, no LEDs. Love how rebuilds that never finish. Just brilliant.
+
+  TK-112459  [portal]  GreenLake  sentiment=Angry  matched: thanks for nothing
+    subject: array down
+    body:    [Customer-selected severity: Critical] Dear HPE Support, The GreenLake is down - both controllers report a panic and no volumes are presented to hosts. It is a proof-of-concept system. If one more component fails we lose the data. Log: "2026-03-06 14:15:39 Smart Array: logical drive 1 status FAILED" Thanks for nothing. Please investigate.
+
+  TK-128896  [chat]  Alletra 6010  sentiment=Positive  matched: fantastic
+    subject: replication failing
+    body:    replication from the alletra 6010 to the dr array has been failing for 11 days. the snapshot schedule on vol-sql-20 stopped, the last good snapshot is 11 days old. it is part of the live payments cluster. some writes may not have been committed. u folks r fantastic, thanks a lot. let us know what logs u need.
+
+  TK-107081  [portal]  Alletra 6010  sentiment=Angry  matched: thanks for nothing
+    subject: Need assistance
+    body:    [Customer-selected severity: Critical] We have raised this 2 times already. This box runs our production ERP. URGENT. web22 on the Alletra 6010 crashed and will not come back - boot device not found. The server itself is healthy, no LEDs. Thanks for nothing.
+
+  TK-126259  [portal]  Alletra 6010  sentiment=Neutral  matched: great
+    subject: Support request
+    body:    [Customer-selected severity: High] Latency on vol-erp-05 jumped past 80 ms since this morning and the Alletra 6010 shows no errors. Please escalate. It is in our test environment. Log: "2026-08-04 18:39:13 disk bay 11: state FAILED, rebuild started" Paused the backup jobs to reduce load. Great, thanks. Can you call me back? Kind regards, Ethan Kumar
+
+==============================================================================
+KEY FINDINGS
+==============================================================================
+- Training set has 30,000 tickets; P1 is the rarest priority (11.1%) yet the costliest to misroute - use class weights and check P1 recall.
+- Teams are imbalanced: Server-HW 25.5% vs Billing-Ops 8.6%.
+- Category alone does not decide the team: only 60.9% of Firmware tickets go to Server-HW.
+- Product overrides the category default in 18 (category, product) pairs, e.g. Storage + ProLiant DL380 Gen11 -> Server-HW - the product must be a model feature.
+- The portal severity tag agrees with the true priority only 44% of the time ('Critical' is really P1 just 36%) - strip it from the text or treat it as a weak feature.
+- 212 severity tags contain typos, so any rule touching them must be fuzzy.
+- Sentiment is a strong hint for priority: 28.8% of Angry tickets are P1 vs 2.7% of Positive ones - but most Angry tickets are still not P1, so tone alone is not enough.
+- Chat is written differently: 58.9% of chat tickets are all lowercase vs 0.0% of emails - lowercase all text before vectorising.
+- The shortest training ticket has 9 words, but 101 eval tickets have fewer than 8 - the model has never seen text that short, so these are prime candidates for abstaining.
+- Curveball tickets test sarcasm, non-English text (Malay, German), all-caps shouting, vague 'it broke' messages, false urgency and out-of-scope requests (e.g. aircon); new products/channels vs training: none.
+- Storage ranks #1 of 8 categories on average misroute cost (2.90): it is 13.1% of tickets but 26.8% of all P1s (P1 rate 22.6%).
+- Storage is the most team-ambiguous category (65% to its top team): about 33% of Storage tickets go to Server-HW because they are about disks inside servers - the product decides it.
+- Emotion is an early warning in Storage: an Angry Storage ticket is P1 45.8% of the time vs 5.7% for Positive; Storage ranks #1 of 8 on escalation risk (38.7%).
+- Tone is tricky: 97 of 892 Storage P1 tickets use positive words ('great', 'love it', 'thanks for nothing') that are often sarcasm - a word-count model can be fooled.

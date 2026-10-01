@@ -1,0 +1,16 @@
+ticket_id,category,priority,assigned_team,sentiment,abstain
+CB-001,Hardware,P2,Server-HW,Angry,0
+CB-002,,P4,,Neutral,1
+CB-003,Hardware,P2,Server-HW,Neutral,0
+CB-004,,P2,,Neutral,1
+CB-005,Storage,P1,Storage-Support,Neutral,0
+CB-006,Hardware,P4,Server-HW,Neutral,0
+CB-007,Firmware,P2,Network-Support,Neutral,0
+CB-008,Access,P1,Account-Admin,Angry,0
+CB-009,Billing,P4,Billing-Ops,Positive,0
+CB-010,Hardware,P2,Server-HW,Neutral,0
+CB-011,,P2,,Angry,1
+CB-012,Access,P4,Account-Admin,Neutral,0
+CB-013,,P2,,Angry,1
+CB-014,Networking,P3,Network-Support,Neutral,0
+CB-015,,P4,,Angry,1
